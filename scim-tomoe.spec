@@ -1,9 +1,9 @@
-%define version   0.5.0
+%define version   0.6.0
 %define release   %mkrel 1
 
-%define scim_version         1.4.5
-%define tomoe_version        0.5.0
-%define libtomoe_gtk_version 0.5.0
+%define scim_version         1.4.7
+%define tomoe_version        0.6.0
+%define libtomoe_gtk_version 0.6.0
 
 %define libname_orig lib%{name}
 %define libname %mklibname %{name} 0
@@ -41,7 +41,7 @@ scim-tomoe library.
 
 %prep
 %setup -q
-cp /usr/share/automake-1.9/mkinstalldirs .
+#cp /usr/share/automake-1.9/mkinstalldirs .
 
 %build
 if [[ ! -x configure ]]; then
@@ -87,5 +87,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc COPYING
 %{_libdir}/scim-1.0/*/Helper/*.so
-
-
