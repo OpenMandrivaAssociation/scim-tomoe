@@ -24,7 +24,7 @@ Requires:        libtomoe-gtk >= %{libtomoe_gtk_version}
 BuildRequires:   scim-devel >= %{scim_version}
 BuildRequires:   libtomoe-devel >= %{tomoe_version}
 BuildRequires:   libtomoe-gtk-devel >= %{libtomoe_gtk_version}
-BuildRequires:   automake1.9
+BuildRequires:   automake
 
 %description
 SCIM module for tomoe.
