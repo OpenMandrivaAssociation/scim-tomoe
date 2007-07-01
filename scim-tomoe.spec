@@ -63,11 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 # remove unnecessary files
 rm -f %{buildroot}/%{_libdir}/scim-1.0/*/*/Helper/*.la
 
-# fix install dir
-mv %{buildroot}/%{_libdir}/scim-1.0/1.4.0/1.4.0/Helper/ \
-   %{buildroot}/%{_libdir}/scim-1.0/1.4.0/
-rm -rf %{buildroot}/%{_libdir}/scim-1.0/1.4.0/1.4.0/
-
 %find_lang %{name}
 
 %clean
