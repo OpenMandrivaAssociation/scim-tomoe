@@ -47,9 +47,9 @@ scim-tomoe library.
 if [[ ! -x configure ]]; then
 # (cjw) do not use bootstrap script directly - it runs "aclocal" and "automake"
   libtoolize --copy --force --automake 
-  aclocal-1.9 -I m4 --force
+  aclocal -I m4 --force
   autoheader
-  automake-1.9 --add-missing --copy --include-deps
+  automake --add-missing --copy --include-deps
   autoconf
 fi
 
