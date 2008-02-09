@@ -1,47 +1,33 @@
 %define version   0.6.0
-%define release   %mkrel 1
+%define release   %mkrel 2
 
 %define scim_version         1.4.7
 %define tomoe_version        0.6.0
 %define libtomoe_gtk_version 0.6.0
-
-%define libname_orig lib%{name}
-%define libname %mklibname %{name} 0
 
 Name:      scim-tomoe
 Summary:   SCIM module for tomoe
 Version:   %{version}
 Release:   %{release}
 Group:     System/Internationalization
-License:   GPL
+License:   GPLv2+
 URL:       http://sourceforge.jp/projects/scim-imengine/
-Source0:   %{name}-%{version}.tar.bz2
+Source0:   http://ovh.dl.sourceforge.net/sourceforge/tomoe/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-Requires:        %{libname} = %{version}
-Requires:        scim >= %{scim_version}
+Requires:        scim-client = %scim_api
 Requires:        tomoe >= %{tomoe_version}
 Requires:        libtomoe-gtk >= %{libtomoe_gtk_version}
 BuildRequires:   scim-devel >= %{scim_version}
 BuildRequires:   libtomoe-devel >= %{tomoe_version}
 BuildRequires:   libtomoe-gtk-devel >= %{libtomoe_gtk_version}
 BuildRequires:   automake
+Obsoletes:	%mklibname %{name} 0
 
 %description
 SCIM module for tomoe.
 
-
-%package -n %{libname}
-Summary:    Scim-tomoe library
-Group:      System/Internationalization
-Provides:   %{libname_orig} = %{version}-%{release}
-
-%description -n %{libname}
-scim-tomoe library.
-
-
 %prep
 %setup -q
-#cp /usr/share/automake-1.9/mkinstalldirs .
 
 %build
 if [[ ! -x configure ]]; then
@@ -61,24 +47,16 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 # remove unnecessary files
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/Helper/*.la
+rm -f %{buildroot}/%scim_plugins_dir/Helper/*.la
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -n %{libname} -p /sbin/ldconfig
-%postun -n %{libname} -p /sbin/ldconfig
-
-
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS COPYING
 %{_bindir}/scim-tomoe
 %{_datadir}/scim/icons/*
-
-%files -n %{libname}
-%defattr(-,root,root)
-%doc COPYING
-%{_libdir}/scim-1.0/*/Helper/*.so
+%{scim_plugins_dir}/Helper/*.so
