@@ -20,7 +20,7 @@ Requires:        libtomoe-gtk >= %{libtomoe_gtk_version}
 BuildRequires:   scim-devel >= %{scim_version}
 BuildRequires:   libtomoe-devel >= %{tomoe_version}
 BuildRequires:   libtomoe-gtk-devel >= %{libtomoe_gtk_version}
-BuildRequires:   automake
+BuildRequires:   automake intltool
 Obsoletes:	%mklibname %{name} 0
 
 %description
