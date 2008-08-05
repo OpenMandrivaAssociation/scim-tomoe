@@ -13,6 +13,7 @@ Group:     System/Internationalization
 License:   GPLv2+
 URL:       http://sourceforge.jp/projects/scim-imengine/
 Source0:   http://ovh.dl.sourceforge.net/sourceforge/tomoe/%{name}-%{version}.tar.bz2
+Patch0:		scim-tomoe-0.6.0-gcc43-cstring-440886.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:        scim-client = %scim_api
 Requires:        tomoe >= %{tomoe_version}
@@ -28,6 +29,7 @@ SCIM module for tomoe.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 if [[ ! -x configure ]]; then
