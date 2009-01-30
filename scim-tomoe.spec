@@ -4,7 +4,7 @@
 Name:		scim-tomoe
 Summary:	SCIM module for tomoe
 Version:	0.6.0
-Release:	%{mkrel 4}
+Release:	%{mkrel 5}
 Group:		System/Internationalization
 License:	GPLv2+
 URL:		http://sourceforge.jp/projects/scim-imengine/
@@ -14,7 +14,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:	scim-client = %scim_api
 Requires:	tomoe >= %{tomoe_version}
 BuildRequires:	scim-devel >= %{scim_version}
-BuildRequires:	libtomoe-devel >= %{tomoe_version}
+BuildRequires:	tomoe-devel >= %{tomoe_version}
 BuildRequires:	libtomoe-gtk-devel
 BuildRequires:	automake
 BuildRequires:	intltool
