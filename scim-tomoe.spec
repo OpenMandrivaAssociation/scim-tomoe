@@ -4,7 +4,7 @@
 Name:		scim-tomoe
 Summary:	SCIM module for tomoe
 Version:	0.6.0
-Release:	%{mkrel 5}
+Release:	%{mkrel 6}
 Group:		System/Internationalization
 License:	GPLv2+
 URL:		http://sourceforge.jp/projects/scim-imengine/
