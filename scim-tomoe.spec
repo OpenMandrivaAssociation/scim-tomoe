@@ -7,7 +7,7 @@ Version:	0.6.0
 Release:	%{mkrel 6}
 Group:		System/Internationalization
 License:	GPLv2+
-URL:		http://sourceforge.jp/projects/scim-imengine/
+URL:		https://sourceforge.jp/projects/scim-imengine/
 Source0:	http://ovh.dl.sourceforge.net/sourceforge/tomoe/%{name}-%{version}.tar.bz2
 Patch0:		scim-tomoe-0.6.0-gcc43-cstring-440886.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
