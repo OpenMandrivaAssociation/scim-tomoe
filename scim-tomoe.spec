@@ -13,6 +13,9 @@ Patch0:		scim-tomoe-0.6.0-gcc43-cstring-440886.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:	scim-client = %scim_api
 Requires:	tomoe >= %{tomoe_version}
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	scim-devel >= %{scim_version}
 BuildRequires:	tomoe-devel >= %{tomoe_version}
 BuildRequires:	libtomoe-gtk-devel
